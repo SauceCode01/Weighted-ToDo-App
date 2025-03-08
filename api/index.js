@@ -12,6 +12,13 @@ const users = [
 ];
 
 
+app.post("/users/:id", (req, res) => {
+  const id = req.params.id;
+  const name = `i am ${id} surname`
+  users.push({id:id,name:name})
+});
+
+
 app.get("/", (req, res) => {
   res.json(users);
 });
